@@ -51,7 +51,10 @@ class World (context.Context):
         self.locs[self.startx+1][self.starty] = whirl
 
         #Test island: always start off next to a test island. Swap in your island to test yours.
-        testland = island.Island (self.startx, self.starty+1, self)
+        testland = kkuri002_island.Island (self.startx, self.starty+1, self)
+        self.locs[self.startx][self.starty+1] = testland
+
+        test_land = island.Island (self.startx, self.starty+1, self)
         self.locs[self.startx][self.starty+1] = testland
 
         # Peaceful island directly to the right of the spawning location.
@@ -66,6 +69,7 @@ class World (context.Context):
         self.events.append (seagull.Seagull())
         self.events.append (sickness.Sickness())
         self.events.append (drowned_pirates.DrownedPirates())
+        self.events.append (kkuri002_event.Shark())
         self.nouns["world"] = self
 
     def get_day (self):

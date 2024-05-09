@@ -74,7 +74,7 @@ class Player (Context):
         else:
             announce ("saving...", end="",pause=False)
             f = open ("save.json", "w")
-            f.write (jsonpickle.encode (self))
+            #f.write (jsonpickle.encode (self))
             f.close()
             announce ("..done")
 
@@ -86,7 +86,7 @@ class Player (Context):
             else:
                 with open ("save.json") as f:
                     s = f.read()
-                config.the_player = jsonpickle.decode (s)
+                #config.the_player = jsonpickle.decode (s)
                 self.go = True
 
     def process_verb (self, verb, cmd_list, nouns):
